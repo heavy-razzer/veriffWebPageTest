@@ -4,7 +4,7 @@ import ee.home.mikem.Libraries.Support;
 import ee.home.mikem.Pages.GetVerifiedPage;
 import ee.home.mikem.Pages.LandingPage;
 import ee.home.mikem.Pages.NoCameraPage;
-import org.junit.AfterClass;
+import org.junit.After;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -45,8 +45,8 @@ public class MainTest {
         noCameraPage = new NoCameraPage(driver);
     }
 
-    @AfterClass
-    public static void tearDown() {
+    @After
+    public void tearDown() {
 
         driver.quit();
     }
