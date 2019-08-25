@@ -7,4 +7,8 @@ public class DocumentType {
     public static String IDcard = "ID Card";
     public static String residencePermit = "Residence Permit";
     public static String drivingLicense = "Driving License";
+
+    public static String getTypeCode(String option){
+        return option.toUpperCase().replace(" ", "_");
+    }
 }
