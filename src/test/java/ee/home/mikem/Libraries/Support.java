@@ -2,10 +2,7 @@ package ee.home.mikem.Libraries;
 
 import ee.home.mikem.MainTest;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 //=====
 // Frequently used functions for web projects
@@ -15,7 +12,7 @@ public class Support {
     //Set pause for milliseconds
     public static void pause(int seconds) {
         try {
-            Thread.sleep(seconds*1000);
+            Thread.sleep(seconds * 1000);
         } catch (InterruptedException ie) {
             System.out.println("\n Cant make sleep to " + seconds);
         }
@@ -39,18 +36,5 @@ public class Support {
         } catch (InterruptedException e) {
             System.out.println("Cant change color of element");
         }
-    }
-
-    public static boolean waitForVisibility(WebElement element) {
-
-        boolean result;
-        WebDriverWait wait = new WebDriverWait(MainTest.driver, 10);
-        try {
-            wait.until(ExpectedConditions.visibilityOf(element));
-            result = true;
-        } catch (TimeoutException e) {
-            result = false;
-        }
-        return result;
     }
 }
