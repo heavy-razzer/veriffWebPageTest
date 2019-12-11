@@ -9,9 +9,9 @@ public class DriverRoutines {
         return CreateDrv.createLocalDriver();
 
         /*
-        Now here is only type of driver.
+        Now here is only one type of driver.
         But in future we can add more types, like BrowserStack or SauseLabs, or mobile connection with Appium
-        One 'init' should create corresponding driver, based on run parameters (from mvn command line or config file)
+        One 'init' will create corresponding driver, based on run parameters (from mvn command line or config file)
          */
     }
 
