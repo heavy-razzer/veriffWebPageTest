@@ -32,6 +32,7 @@ public class BookListPage extends BasePage {
 
     @Step("Wait for Book list page opened")
     public BookListPage waitForOpening() {
+        //TODO: Looks like there is some animation on site, so actions are not applied to elements, although it is visible and clickable. Wait for something else.
         SleepDriver.sleep(1);
         waitFor(pageTitle, "Book list page title", TAG);
         return this;

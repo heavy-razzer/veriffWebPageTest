@@ -23,8 +23,7 @@ public class CreateDrv {
         WebDriver localDriver = null;
 
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-notifications");
-        options.setExperimentalOption("w3c", false); // Fix for new Appium 1.15
+        options.addArguments("--disable-notifications"); // Disable any popups on pages for sure
 
         String browser = getBrowser();
         sysLog(CREATING_LOCAL_DRV);

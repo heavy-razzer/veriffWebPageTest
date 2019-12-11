@@ -35,6 +35,11 @@ public class SampleTest extends MainTest {
                 .submit();
         bookDetailsPage
                 .waitForOpening();
+        /*
+        I does not check for book details on this page: this is another test.
+        I check if user can ADD book, not VIEW book details
+        This functionality does not linked - you can view books, even you cant create new ones, and vice versa
+         */
     }
 
     @Test
@@ -51,5 +56,9 @@ public class SampleTest extends MainTest {
         bookListPage
                 .waitForOpening()
                 .isBookTitleListed(book.getTitle());
+        /*
+        Here is check if title of new book is listed
+        I dont check if book displayed correctly: link, author name, position etc.
+         */
     }
 }
