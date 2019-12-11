@@ -51,6 +51,8 @@ public class SampleTest extends MainTest {
 
         Book book = new Book().createBookEntry();
 
+        homePage
+                .waitForOpening();
         mainMenu
                 .selectAllBooks();
         bookListPage
