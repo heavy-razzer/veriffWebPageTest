@@ -3,6 +3,9 @@ package ee.home.mikem.Libraries;
 import ee.home.mikem.Drivers.CreateDrv;
 import org.openqa.selenium.WebDriver;
 
+/*
+WebDriver initialisation for different test environments
+ */
 public class DriverRoutines {
 
     public static WebDriver initDriver() {

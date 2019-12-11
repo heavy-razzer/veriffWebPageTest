@@ -9,6 +9,9 @@ import java.util.Date;
 
 import static ee.home.mikem.Utils.Log.sysLog;
 
+/*
+Functions and Utilities to work with test environment
+ */
 public class OsUtils {
 
     private static String OS = null;

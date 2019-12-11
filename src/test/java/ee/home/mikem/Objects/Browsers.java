@@ -1,5 +1,8 @@
 package ee.home.mikem.Objects;
 
+/*
+List of supported browsers
+ */
 public class Browsers {
 
     public static String CHROME = "Chrome";

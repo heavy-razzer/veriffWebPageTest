@@ -5,7 +5,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
 //=====
-// Frequently used functions for web projects
+// This function can be used to mark elements under test, if needed.
 //=====
 public class Support {
 

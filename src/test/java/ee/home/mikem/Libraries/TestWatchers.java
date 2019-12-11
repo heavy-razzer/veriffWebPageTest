@@ -11,6 +11,9 @@ import org.openqa.selenium.WebDriver;
 
 import static ee.home.mikem.Utils.Log.print;
 
+/*
+Custom actions after test, based on test result
+ */
 public class TestWatchers extends TestWatcher {
 
     private WebDriver driver;

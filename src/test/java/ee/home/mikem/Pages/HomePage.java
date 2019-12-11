@@ -6,6 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+/*
+Web page with Home page, containing library statistics
+ */
 public class HomePage extends BasePage {
 
     private String TAG = "  HomePage   ";

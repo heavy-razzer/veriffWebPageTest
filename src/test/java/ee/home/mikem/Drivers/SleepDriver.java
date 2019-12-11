@@ -4,6 +4,9 @@ import ee.home.mikem.Utils.Log;
 
 import static ee.home.mikem.Objects.MSG.ERR_SLEEP_FAILED;
 
+/*
+Function to make pause while executing test
+ */
 public class SleepDriver {
 
     public static void sleep(int seconds) {

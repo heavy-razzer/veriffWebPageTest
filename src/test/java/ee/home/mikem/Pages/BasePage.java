@@ -16,6 +16,10 @@ import static ee.home.mikem.Utils.Log.errLog;
 import static ee.home.mikem.Utils.Log.log;
 import static ee.home.mikem.Utils.OsUtils.timeStamp;
 
+/*
+Contains basic element functions, that are used in each test.
+Used to apply actions and handle error in one place
+ */
 class BasePage {
 
     @Step("Click on '{description}'")

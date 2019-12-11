@@ -16,6 +16,9 @@ import static ee.home.mikem.Objects.DateFormats.SHORT_TIME;
 import static ee.home.mikem.Utils.Log.log;
 import static ee.home.mikem.Utils.OsUtils.timeStamp;
 
+/*
+Web page with Catalogue: books list
+ */
 public class BookListPage extends BasePage {
 
     private String TAG = "  BookListPage   ";

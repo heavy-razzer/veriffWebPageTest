@@ -12,6 +12,9 @@ import org.openqa.selenium.WebDriver;
 import static ee.home.mikem.Objects.MSG.DRV_CLOSED;
 import static ee.home.mikem.Utils.Log.sysLog;
 
+/*
+Basic test class. Prepare environment before test, clean it up after test.
+ */
 public class MainTest {
 
     // Link to test page

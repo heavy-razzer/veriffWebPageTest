@@ -6,6 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+/*
+Main menu items
+ */
 public class MainMenu extends BasePage {
 
     private String TAG = "  MainMenu   ";

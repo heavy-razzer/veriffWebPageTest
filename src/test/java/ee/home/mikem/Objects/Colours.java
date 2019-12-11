@@ -2,6 +2,9 @@ package ee.home.mikem.Objects;
 
 import lombok.Getter;
 
+/*
+Colours for text formatting in log
+ */
 public enum Colours {
     DEFAULT("\u001B[0m"),
     RED("\u001B[31m"),

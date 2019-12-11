@@ -1,5 +1,8 @@
 package ee.home.mikem.Objects;
 
+/*
+System messages storage
+ */
 public enum MSG {
 
     // Driver operations

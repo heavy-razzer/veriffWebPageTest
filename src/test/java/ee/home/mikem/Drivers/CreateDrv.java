@@ -13,6 +13,9 @@ import static ee.home.mikem.Utils.Log.errLog;
 import static ee.home.mikem.Utils.Log.sysLog;
 import static ee.home.mikem.Utils.OsUtils.*;
 
+/*
+Create WebDriver, using OS-dependent binaries from project
+ */
 public class CreateDrv {
 
     public static WebDriver createLocalDriver() {

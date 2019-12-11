@@ -10,6 +10,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
+/*
+Web page with form for adding new book
+ */
 public class NewBookPage extends BasePage {
 
     private String TAG = "  NewBookPage   ";

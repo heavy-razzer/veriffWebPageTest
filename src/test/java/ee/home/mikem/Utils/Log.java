@@ -6,6 +6,9 @@ import org.junit.Assert;
 import static ee.home.mikem.Objects.DateFormats.SHORT_TIME;
 import static ee.home.mikem.Utils.OsUtils.timeStamp;
 
+/*
+Functions to print different information in log
+ */
 public class Log {
 
     public static void log(Object text, Object... args) {

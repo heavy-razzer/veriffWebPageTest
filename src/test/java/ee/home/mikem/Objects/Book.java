@@ -6,6 +6,9 @@ import ee.home.mikem.Utils.OsUtils;
 import io.qameta.allure.Description;
 import lombok.Getter;
 
+/*
+Book object to use in tests.: define parameters, create entity in DB
+ */
 @Getter
 public class Book extends MainTest {
 
