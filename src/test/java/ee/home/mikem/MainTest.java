@@ -1,53 +1,66 @@
 package ee.home.mikem;
 
-import ee.home.mikem.Libraries.Support;
-import ee.home.mikem.Pages.GetVerifiedPage;
-import ee.home.mikem.Pages.LandingPage;
-import ee.home.mikem.Pages.NoCameraPage;
-import org.junit.After;
+import ee.home.mikem.Libraries.DriverRoutines;
+import ee.home.mikem.Libraries.TestWatchers;
+import ee.home.mikem.Pages.*;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.util.concurrent.TimeUnit;
+import static ee.home.mikem.Objects.MSG.DRV_CLOSED;
+import static ee.home.mikem.Utils.Log.sysLog;
 
-//=====
-// Tests for "BetPawa" web site
-//=====
+/*
+Basic test class. Prepare environment before test, clean it up after test.
+ */
 public class MainTest {
 
-    // init driver
+    // Link to test page
+    private String HOME_PAGE = "https://raamatukogu.herokuapp.com/catalog";
+
+    // Additional actions at test end
+    @Rule
+    public TestWatchers basicRules = new TestWatchers();
+
+    // Main driver
     public static WebDriver driver;
 
-    // init my frequently used commands
-    public static Support myCommands = new Support();
+    // Pages with screen elements locators
+    protected HomePage homePage;
+    protected NewBookPage newBookPage;
+    protected BookDetailsPage bookDetailsPage;
+    protected MainMenu mainMenu;
+    protected BookListPage bookListPage;
 
-    // init pages with screen elements locators
-    protected LandingPage landingPage;
-    protected GetVerifiedPage getVerifiedPage;
-    protected NoCameraPage noCameraPage;
-
-    public MainTest(){
-
-        // Set driver for Chrome
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\chromedriver.exe");
-        driver = new ChromeDriver();
-
-        // Maximize browser window
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
-        String landingPageLink = "https://demo.veriff.me/";
-        driver.get(landingPageLink);
+    public MainTest() {
 
         // Init pages
-        landingPage = new LandingPage(driver);
-        getVerifiedPage = new GetVerifiedPage(driver);
-        noCameraPage = new NoCameraPage(driver);
+        homePage = new HomePage();
+        newBookPage = new NewBookPage();
+        bookDetailsPage = new BookDetailsPage();
+        mainMenu = new MainMenu();
+        bookListPage = new BookListPage();
     }
 
-    @After
-    public void tearDown() {
+    @BeforeClass
+    public static void prepareSuite() {
+        driver = DriverRoutines.initDriver();
+    }
 
-        driver.quit();
+    @AfterClass
+    public static void terminateSuite() {
+
+        if (driver != null) {
+            driver.quit();
+            sysLog(DRV_CLOSED);
+        }
+    }
+
+    @Before
+    public void beforeTest() {
+        driver.manage().deleteAllCookies();
+        driver.get(HOME_PAGE);
     }
 }
