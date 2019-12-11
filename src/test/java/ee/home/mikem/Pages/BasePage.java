@@ -16,10 +16,10 @@ import static ee.home.mikem.Utils.Log.errLog;
 import static ee.home.mikem.Utils.Log.log;
 import static ee.home.mikem.Utils.OsUtils.timeStamp;
 
-public class BasePage {
+class BasePage {
 
     @Step("Click on '{description}'")
-    public static void click(WebElement element, String description, String tag) {
+    static void click(WebElement element, String description, String tag) {
         log(Colours.BLUE.getColour() + timeStamp(SHORT_TIME) + Colours.DEFAULT.getColour()
                 + " - "
                 + tag
@@ -37,7 +37,7 @@ public class BasePage {
     }
 
     @Step("Wait for element '{description}'")
-    public static void waitFor(WebElement element, String description, String tag) {
+    static void waitFor(WebElement element, String description, String tag) {
         log(Colours.BLUE.getColour() + timeStamp(SHORT_TIME) + Colours.DEFAULT.getColour()
                 + " - "
                 + tag
@@ -60,7 +60,7 @@ public class BasePage {
     }
 
     @Step("Type '{text}' text to element '{description}'")
-    public static void type(WebElement element, String text, String description, String tag) {
+    static void type(WebElement element, String text, String description, String tag) {
         log(Colours.BLUE.getColour() + timeStamp(SHORT_TIME) + Colours.DEFAULT.getColour()
                 + " - "
                 + tag
@@ -87,7 +87,7 @@ public class BasePage {
     }
 
     @Step("Select '{text}' item in dropdown '{description}'")
-    public static void selectItemInDropDown(WebElement element, String text, String description, String tag) {
+    static void selectItemInDropDown(WebElement element, String text, String description, String tag) {
         log(Colours.BLUE.getColour() + timeStamp(SHORT_TIME) + Colours.DEFAULT.getColour()
                 + " - "
                 + tag

@@ -1,6 +1,5 @@
 package ee.home.mikem.Utils;
 
-
 import ee.home.mikem.Objects.Colours;
 import org.junit.Assert;
 

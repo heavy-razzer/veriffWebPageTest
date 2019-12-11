@@ -1,10 +1,13 @@
 package ee.home.mikem.Objects;
 
+import ee.home.mikem.Drivers.SleepDriver;
+import ee.home.mikem.MainTest;
 import ee.home.mikem.Utils.OsUtils;
+import io.qameta.allure.Description;
 import lombok.Getter;
 
 @Getter
-public class Book {
+public class Book extends MainTest {
 
     private String title;
     private String author;
@@ -26,6 +29,36 @@ public class Book {
         summary = Summary;
         isbn = Isbn;
         genre = Genre;
+        return this;
+    }
+
+    @Description("Create new book entry")
+    public Book createBookEntry() {
+
+        /*
+        This is very straightforward approach to creating book: from UI. It takes to many time ond not reliable.
+        Much better is to use API commands or direct access to DB.
+        But because I have no such access, I just copied steps from test =)
+         */
+
+        homePage
+                .waitForOpening();
+        mainMenu
+                .selectNewBook();
+        newBookPage
+                .waitForOpening()
+                .enterTitle(this.getTitle())
+                .selectAuthor(this.getAuthor())
+                .enterSummary(this.getSummary())
+                .enterISBN(this.getIsbn())
+                .selectBookType(this.getGenre())
+                .submit();
+        bookDetailsPage
+                .waitForOpening();
+
+        // I cant check if book was really created, so wait for a wile for sure
+        SleepDriver.sleep(2);
+
         return this;
     }
 }

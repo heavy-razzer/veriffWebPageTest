@@ -6,7 +6,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.safari.SafariDriver;
 
-import java.text.DecimalFormat;
 import java.util.concurrent.TimeUnit;
 
 import static ee.home.mikem.Objects.MSG.*;
@@ -19,7 +18,6 @@ public class CreateDrv {
     public static WebDriver createLocalDriver() {
 
         WebDriver localDriver = null;
-        DecimalFormat format = new DecimalFormat("0.#");
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-notifications");
@@ -56,8 +54,7 @@ public class CreateDrv {
         return localDriver;
     }
 
-
-    static String getPathToChromeDrv() {
+    private static String getPathToChromeDrv() {
 
         String rootDirectory = System.getProperty("user.dir");
         String pathToDriver = null;

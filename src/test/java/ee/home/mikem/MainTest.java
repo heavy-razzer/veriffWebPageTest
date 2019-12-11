@@ -1,14 +1,12 @@
 package ee.home.mikem;
 
 import ee.home.mikem.Libraries.DriverRoutines;
-import ee.home.mikem.Libraries.Support;
-import ee.home.mikem.Pages.BookDetailsPage;
-import ee.home.mikem.Pages.HomePage;
-import ee.home.mikem.Pages.MainMenu;
-import ee.home.mikem.Pages.NewBookPage;
+import ee.home.mikem.Libraries.TestWatchers;
+import ee.home.mikem.Pages.*;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.openqa.selenium.WebDriver;
 
 import static ee.home.mikem.Objects.MSG.DRV_CLOSED;
@@ -16,30 +14,31 @@ import static ee.home.mikem.Utils.Log.sysLog;
 
 public class MainTest {
 
-    // Link to tets page
+    // Link to test page
     private String HOME_PAGE = "https://raamatukogu.herokuapp.com/catalog";
 
-    // init driver
+    // Additional actions at test end
+    @Rule
+    public TestWatchers basicRules = new TestWatchers();
+
+    // Main driver
     public static WebDriver driver;
 
-    // init my frequently used commands
-    public static Support myCommands = new Support();
-
-    // init pages with screen elements locators
+    // Pages with screen elements locators
     protected HomePage homePage;
     protected NewBookPage newBookPage;
     protected BookDetailsPage bookDetailsPage;
     protected MainMenu mainMenu;
+    protected BookListPage bookListPage;
 
     public MainTest() {
-
-        driver.get(HOME_PAGE);
 
         // Init pages
         homePage = new HomePage();
         newBookPage = new NewBookPage();
         bookDetailsPage = new BookDetailsPage();
         mainMenu = new MainMenu();
+        bookListPage = new BookListPage();
     }
 
     @BeforeClass
@@ -57,7 +56,8 @@ public class MainTest {
     }
 
     @Before
-    public void beforeClass() {
+    public void beforeTest() {
         driver.manage().deleteAllCookies();
+        driver.get(HOME_PAGE);
     }
 }
