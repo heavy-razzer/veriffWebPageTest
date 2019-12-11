@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 //=====
 public class Support {
 
-    //Set pause for milliseconds
+    // Set pause for milliseconds
     public static void pause(int seconds) {
         try {
             Thread.sleep(seconds * 1000);
@@ -18,7 +18,7 @@ public class Support {
         }
     }
 
-    //Make current web-element flashing
+    // Make current web-element flashing
     public static void flash(WebElement element) {
         JavascriptExecutor js = ((JavascriptExecutor) MainTest.driver);
         String bgcolor = element.getCssValue("backgroundColor");

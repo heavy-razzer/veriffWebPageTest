@@ -7,6 +7,12 @@ public class DriverRoutines {
 
     public static WebDriver initDriver() {
         return CreateDrv.createLocalDriver();
+
+        /*
+        Now here is only type of driver.
+        But in future we can add more types, like BrowserStack or SauseLabs, or mobile connection with Appium
+        One 'init' should create corresponding driver, based on run parameters (from mvn command line or config file)
+         */
     }
 
 }

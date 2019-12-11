@@ -2,7 +2,9 @@ package ee.home.mikem;
 
 import ee.home.mikem.Libraries.DriverRoutines;
 import ee.home.mikem.Libraries.Support;
+import ee.home.mikem.Pages.BookDetailsPage;
 import ee.home.mikem.Pages.HomePage;
+import ee.home.mikem.Pages.MainMenu;
 import ee.home.mikem.Pages.NewBookPage;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -26,6 +28,8 @@ public class MainTest {
     // init pages with screen elements locators
     protected HomePage homePage;
     protected NewBookPage newBookPage;
+    protected BookDetailsPage bookDetailsPage;
+    protected MainMenu mainMenu;
 
     public MainTest() {
 
@@ -34,6 +38,8 @@ public class MainTest {
         // Init pages
         homePage = new HomePage();
         newBookPage = new NewBookPage();
+        bookDetailsPage = new BookDetailsPage();
+        mainMenu = new MainMenu();
     }
 
     @BeforeClass

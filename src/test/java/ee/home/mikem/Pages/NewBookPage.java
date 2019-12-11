@@ -1,7 +1,8 @@
 package ee.home.mikem.Pages;
 
+import ee.home.mikem.Drivers.SleepDriver;
 import ee.home.mikem.MainTest;
-import ee.home.mikem.Objects.BookType;
+import ee.home.mikem.Objects.Genre;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -10,11 +11,14 @@ import java.util.List;
 
 public class NewBookPage extends BasePage {
 
-    private String TAG = "  NewBookPage|   ";
+    private String TAG = "  NewBookPage   ";
 
     public NewBookPage() {
         PageFactory.initElements(MainTest.driver, this);
     }
+
+    @FindBy(xpath = "//h1[text()='Create Book']")
+    private WebElement pageTitle;
 
     @FindBy(id = "title")
     private WebElement titleEdit;
@@ -35,7 +39,8 @@ public class NewBookPage extends BasePage {
     private WebElement submitButton;
 
     public NewBookPage waitForOpening() {
-        waitFor(titleEdit, "Title edit field", TAG);
+        SleepDriver.sleep(1);
+        waitFor(pageTitle, "Create book page title", TAG);
         return this;
     }
 
@@ -60,7 +65,7 @@ public class NewBookPage extends BasePage {
     }
 
     public NewBookPage selectBookType(String type) {
-        if (type.equals(BookType.NON_FICTION)) {
+        if (type.equals(Genre.NON_FICTION)) {
             click(bookTypeCheckBoxes.get(0), "Non-Fiction", TAG);
         } else {
             click(bookTypeCheckBoxes.get(1), "Fiction", TAG);

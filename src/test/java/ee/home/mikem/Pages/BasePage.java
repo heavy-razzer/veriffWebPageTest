@@ -18,7 +18,7 @@ import static ee.home.mikem.Utils.OsUtils.timeStamp;
 
 public class BasePage {
 
-    @Step("Click on '{element}'")
+    @Step("Click on '{description}'")
     public static void click(WebElement element, String description, String tag) {
         log(Colours.BLUE.getColour() + timeStamp(SHORT_TIME) + Colours.DEFAULT.getColour()
                 + " - "
@@ -46,9 +46,8 @@ public class BasePage {
                 + description
                 + Colours.DEFAULT.getColour()
                 + "'");
-        WebDriverWait wait = new WebDriverWait(MainTest.driver, 10);
+        WebDriverWait wait = new WebDriverWait(MainTest.driver, 5);
         try {
-            wait.until(ExpectedConditions.visibilityOf(element));
             wait.until(ExpectedConditions.elementToBeClickable(element));
         } catch (TimeoutException e) {
             errLog(timeStamp(SHORT_TIME)

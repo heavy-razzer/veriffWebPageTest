@@ -7,17 +7,15 @@ import org.openqa.selenium.support.PageFactory;
 
 public class HomePage extends BasePage {
 
-    private String TAG = "  HomePage|   ";
+    private String TAG = "  HomePage   ";
 
     public HomePage() {
         PageFactory.initElements(MainTest.driver, this);
     }
 
-    // Home page title
     @FindBy(className = "col-sm-10")
     private WebElement pageTitle;
 
-    // Create new book link
     @FindBy(xpath = "//a[@href='/catalog/book/create']")
     private WebElement createNewBookLink;
 
