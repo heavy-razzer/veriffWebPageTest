@@ -19,7 +19,7 @@ Usage:
 - 'mvn allure:serve' to generate HTML report
 
 Note:
-- Test should work with Safari, but I can check it right now: I have only Win10 PC.
+- Test should work with Safari, but I can not check it right now: I have only Win10 PC.
 - Test can be launched on Windows, macOS ans Linux: corresponding Chrome drivers included to project, and test will use one that is suitable for current OS
 
 
