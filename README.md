@@ -1,4 +1,4 @@
-# BigBank Web Page Test
+# Web Page Automated Test
 Author: Miroshnichenko Mikhail
 Email: hikari.no.mikem@gmail.com
 
